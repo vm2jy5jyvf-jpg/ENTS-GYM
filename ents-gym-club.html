@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ents Gym Club 2.0 — Avezzano</title>
+<meta name="description" content="Ents Gym Club 2.0 a Avezzano: sala pesi, personal trainer e allenamenti su misura per forza, postura e performance in un ambiente moderno e professionale.">
+<meta property="og:title" content="Ents Gym Club 2.0 — Avezzano">
+<meta property="og:description" content="Sala pesi, personal trainer e percorso su misura a Avezzano. Entra nella palestra pensata per crescere con metodo e costanza.">
+<meta property="og:image" content="Cattura-1.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%238de0a3' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='9' fill='none' stroke='%235f8f72' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthClub",
+  "name": "Ents Gym Club 2.0",
+  "image": "Cattura-1.png",
+  "telephone": "+39 329 456 5948",
+  "url": "https://example.com/",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via XX Settembre, 482",
+    "postalCode": "67051",
+    "addressLocality": "Avezzano",
+    "addressRegion": "AQ",
+    "addressCountry": "IT"
+  },
+  "openingHours": [
+    "Mo-Fr 07:30-22:00",
+    "Sa 08:30-13:00"
+  ],
+  "sameAs": [
+    "https://www.instagram.com/ifedele_el_tanque/",
+    "https://www.instagram.com/dr._germano_theblade/"
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#070b08;
+    --bg-2:#0e1411;
+    --panel:#101915;
+    --panel-2:#15241c;
+    --panel-3:#1b2f25;
+    --green:#1a3328;
+    --green-2:#234734;
+    --green-3:#2d5d44;
+    --green-soft:#5f8f72;
+    --text:#f5f7f5;
+    --text-soft:#dfe7e1;
+    --text-muted:#b7c4bc;
+    --line: rgba(255,255,255,0.08);
+    --line-strong: rgba(255,255,255,0.14);
+    --accent:#6fbf8f;
+    --accent-2:#8de0a3;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    line-height:1.05;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:50;
+    background:rgba(28,43,34,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .brand{
+    color:var(--text);
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .brand .ring{
+    width:20px; height:20px;
+    border-radius:50%;
+    border:2px solid var(--accent-2);
+    position:relative;
+    flex-shrink:0;
+  }
+  .brand .ring::after{
+    content:'';
+    position:absolute;
+    inset:4px;
+    border-radius:50%;
+    border:2px solid var(--green-soft);
+  }
+  .navlinks{
+    display:flex;
+    gap:34px;
+    font-size:0.86rem;
+  }
+  .navlinks a{
+    color:var(--text-soft);
+    text-decoration:none;
+    font-weight:500;
+    transition:color .25s ease;
+  }
+  .navlinks a:hover{color:var(--accent-2);}
+  .nav-cta{
+    background:var(--accent);
+    color:#07110b;
+    padding:10px 20px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:0.84rem;
+    text-decoration:none;
+    transition:background .25s ease, transform .25s ease;
+  }
+  .nav-cta:hover{background:var(--accent-2); transform:translateY(-1px);}
+
+  .nav-toggle{
+    display:none;
+    width:46px;
+    height:46px;
+    border:1px solid var(--line-strong);
+    background:rgba(255,255,255,0.02);
+    border-radius:999px;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    padding:0;
+  }
+  .nav-toggle span{
+    display:block;
+    width:18px;
+    height:2px;
+    background:var(--text);
+    border-radius:2px;
+    transition:transform .25s ease, opacity .25s ease;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .nav-panel{
+    display:none;
+    position:fixed;
+    top:72px;
+    left:0;
+    right:0;
+    background:rgba(12,18,15,0.98);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(10px);
+    opacity:0;
+    transform:translateY(-10px);
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  .nav-panel.open{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+
+  @media(max-width:820px){
+    .navlinks{display:none;}
+    .nav-toggle{display:flex;}
+    .nav-panel{display:block;}
+    .nav-panel .navlinks{
+      display:flex;
+      flex-direction:column;
+      gap:0;
+      max-width:1180px;
+      margin:0 auto;
+      padding:16px 32px 20px;
+    }
+    .nav-panel .navlinks a{
+      display:block;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
+      font-size:0.9rem;
+    }
+    .nav-panel .navlinks a:last-child{border-bottom:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:radial-gradient(ellipse at 20% -10%, var(--green-3) 0%, var(--green-2) 32%, var(--bg) 72%);
+    color:var(--text);
+    display:flex;
+    align-items:center;
+    padding-top:96px;
+    overflow:hidden;
+  }
+  .hero-rings{
+    position:absolute;
+    right:-180px;
+    top:50%;
+    transform:translateY(-50%);
+    width:920px;
+    height:920px;
+    pointer-events:none;
+    opacity:0.55;
+  }
+  .hero-rings svg{width:100%; height:100%;}
+  .ring-path{
+    fill:none;
+    stroke:var(--green-soft);
+    stroke-opacity:0.35;
+  }
+  .ring-path.b{stroke:var(--accent); stroke-opacity:0.28;}
+
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:1180px;
+    margin:0 auto;
+    padding:60px 32px 100px;
+    width:100%;
+  }
+  .eyebrow{
+    color:var(--accent-2);
+    font-size:0.78rem;
+    margin-bottom:22px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:34px; height:1px;
+    background:var(--accent-2);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 5rem);
+    max-width:760px;
+    color:var(--text);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--accent-2);
+  }
+  .hero p.lead{
+    margin-top:26px;
+    max-width:480px;
+    font-size:1.08rem;
+    color:var(--text-soft);
+  }
+  .hero-actions{
+    margin-top:42px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    padding:15px 28px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:0.92rem;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:transform .25s ease, background .25s ease, border-color .25s ease;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#07110b;
+  }
+  .btn-primary:hover{background:var(--accent-2); transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line-strong);
+    color:var(--text);
+  }
+  .btn-ghost:hover{border-color:var(--accent-2); color:var(--accent-2); transform:translateY(-2px);}
+
+  .hero-rating{
+    margin-top:56px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    color:var(--text-soft);
+    font-size:0.88rem;
+  }
+  .rating-number{
+    font-family:'Fraunces', serif;
+    font-size:2.4rem;
+    color:var(--text);
+    line-height:1;
+  }
+  .stars{color:var(--accent-2); letter-spacing:2px; font-size:0.95rem;}
+
+  /* ---------- RINGS STAT STRIP ---------- */
+  .strip{
+    background:var(--panel-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .strip-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  .strip-item{
+    padding:28px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:28px;
+    flex-wrap:wrap;
+    color:var(--text);
+  }
+  .strip-rating{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .strip-rating .rating-number{
+    font-family:'Fraunces', serif;
+    font-size:3rem;
+    color:var(--accent-2);
+    line-height:1;
+  }
+  .strip-rating .rating-label{
+    color:var(--text-soft);
+    font-size:0.9rem;
+  }
+  @media(max-width:760px){
+    .strip-item{padding:24px 18px; gap:18px;}
+    .strip-rating{gap:10px;}
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:120px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:64px;
+  }
+  .section-tag{
+    color:var(--accent-2);
+    font-size:0.76rem;
+    margin-bottom:16px;
+  }
+  .section-head h2{
+    font-size:clamp(1.9rem, 3.6vw, 2.7rem);
+    color:var(--text);
+  }
+  .section-head p{
+    margin-top:18px;
+    color:var(--text-muted);
+    font-size:1.02rem;
+    max-width:520px;
+  }
+
+  /* ---------- CHI SIAMO ---------- */
+  .about{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+  }
+  .about-copy p{
+    color:var(--text-soft);
+    margin-bottom:18px;
+    font-size:1.02rem;
+  }
+  .about-copy p:last-of-type{margin-bottom:0;}
+  .about-visual{
+    position:relative;
+    aspect-ratio:1/1.05;
+    background:linear-gradient(155deg, var(--panel-3) 0%, var(--green-2) 55%, var(--green-soft) 130%);
+    border-radius:2px;
+    overflow:hidden;
+    box-shadow:0 28px 60px rgba(0,0,0,0.25);
+  }
+  .about-visual img{
+    width:100%; height:100%; object-fit:cover; object-position:center center; display:block;
+    filter:saturate(0.9) contrast(1.08) brightness(0.78);
+  }
+  .about-visual .rings-overlay{
+    position:absolute; inset:0;
+    opacity:0.5;
+  }
+  .about-visual::before{
+    content:'ENTS';
+    position:absolute;
+    bottom:28px; left:28px;
+    font-family:'Fraunces', serif;
+    font-size:0.85rem;
+    letter-spacing:0.3em;
+    color:rgba(255,255,255,0.8);
+  }
+  @media(max-width:900px){
+    .about{grid-template-columns:1fr; gap:44px;}
+    .about-visual{order:-1; aspect-ratio:16/10;}
+  }
+
+  /* ---------- PROGRAMMI ---------- */
+  .programs{
+    background:var(--panel);
+    color:var(--text);
+  }
+  .programs .section-head p{color:var(--text-soft);}
+  .programs .section-tag{color:var(--accent-2);}
+  .program-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .program-card{
+    background:var(--panel);
+    padding:40px 32px;
+    transition:background .3s ease;
+  }
+  .program-card:hover{background:var(--panel-2);}
+  .program-ring{
+    width:46px; height:46px;
+    border-radius:50%;
+    border:1.5px solid var(--accent-2);
+    position:relative;
+    margin-bottom:26px;
+  }
+  .program-ring::after{
+    content:'';
+    position:absolute; inset:9px;
+    border-radius:50%;
+    border:1.5px solid var(--green-soft);
+  }
+  .program-card h3{
+    font-size:1.2rem;
+    color:var(--text);
+    margin-bottom:12px;
+  }
+  .program-card p{
+    color:var(--text-soft);
+    font-size:0.94rem;
+  }
+  @media(max-width:900px){
+    .program-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- TEAM ---------- */
+  .team-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+  }
+  .team-card{
+    border-top:1px solid var(--line);
+    padding-top:26px;
+  }
+  .team-photo,
+  .team-monogram{
+    aspect-ratio:4/5;
+    background:linear-gradient(165deg, var(--panel-3) 0%, var(--green-2) 100%);
+    margin-bottom:22px;
+    position:relative;
+    overflow:hidden;
+  }
+  .team-photo img{
+    width:100%; height:100%; object-fit:cover; object-position:center top; display:block;
+    filter:saturate(0.85) contrast(1.05) brightness(0.8);
+  }
+  .team-photo::after,
+  .team-monogram::after{
+    content:attr(data-initial);
+    position:absolute;
+    right:16px; bottom:12px;
+    font-family:'Fraunces', serif;
+    font-size:3.4rem;
+    color:rgba(255,255,255,0.12);
+  }
+  .team-card h3{
+    font-size:1.15rem;
+    color:var(--text);
+  }
+  .team-role{
+    color:var(--accent-2);
+    font-size:0.78rem;
+    margin:8px 0 12px;
+  }
+  .team-card p{
+    color:var(--text-soft);
+    font-size:0.92rem;
+  }
+  @media(max-width:820px){
+    .team-grid{grid-template-columns:1fr; gap:48px;}
+  }
+
+  /* ---------- RECENSIONI ---------- */
+  .reviews{
+    background:var(--bg-2);
+  }
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .review-card{
+    background:var(--panel);
+    padding:32px 28px;
+    border:1px solid var(--line);
+  }
+  .review-stars{color:var(--accent-2); font-size:0.9rem; margin-bottom:16px;}
+  .review-card p.quote{
+    font-family:'Fraunces', serif;
+    font-size:1.08rem;
+    font-style:italic;
+    color:var(--text);
+    margin-bottom:20px;
+  }
+  .review-author{
+    font-size:0.82rem;
+    color:var(--text-muted);
+    display:flex;
+    justify-content:space-between;
+  }
+  @media(max-width:900px){
+    .review-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- ORARI + CONTATTI ---------- */
+  .contact{
+    background:var(--panel);
+    color:var(--text);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+  }
+  .hours-table{
+    width:100%;
+    border-collapse:collapse;
+  }
+  .hours-table tr{
+    border-bottom:1px solid var(--line);
+  }
+  .hours-table td{
+    padding:14px 0;
+    font-size:0.94rem;
+  }
+  .hours-table td:first-child{
+    color:var(--text-soft);
+  }
+  .hours-table td:last-child{
+    text-align:right;
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--text);
+  }
+  .hours-table tr.today td{color:var(--accent-2);}
+  .hours-table tr.closed td{color:var(--green-soft);}
+
+  .contact-info h3{
+    color:var(--text);
+    font-size:1.4rem;
+    margin-bottom:24px;
+  }
+  .info-row{
+    display:flex;
+    gap:14px;
+    margin-bottom:20px;
+    font-size:0.96rem;
+    color:var(--text-soft);
+  }
+  .info-row .label{
+    color:var(--accent-2);
+    min-width:90px;
+    font-size:0.76rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding-top:2px;
+  }
+  .info-row a{text-decoration:none; color:var(--text);}
+  .info-row a:hover{color:var(--accent-2);}
+
+  @media(max-width:820px){
+    .contact-grid{grid-template-columns:1fr; gap:48px;}
+  }
+
+  /* ---------- CTA FINALE ---------- */
+  .cta-final{
+    text-align:center;
+    padding:130px 0;
+  }
+  .cta-final h2{
+    font-size:clamp(2rem, 4.4vw, 3.2rem);
+    max-width:680px;
+    margin:0 auto 26px;
+    color:var(--text);
+  }
+  .cta-final p{
+    color:var(--text-soft);
+    max-width:460px;
+    margin:0 auto 38px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:#050907;
+    color:var(--text-soft);
+    padding:48px 0;
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+    font-size:0.82rem;
+  }
+  .footer-brand{
+    font-family:'Fraunces', serif;
+    color:var(--text);
+  }
+  .footer-socials{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .social-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:12px;
+  }
+  .social-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:9px 14px;
+    border-radius:999px;
+    border:1px solid var(--line-strong);
+    color:var(--text-soft);
+    background:rgba(255,255,255,0.02);
+    text-decoration:none;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    transition:transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
+  }
+  .social-link:hover{
+    transform:translateY(-1px);
+    border-color:var(--accent-2);
+    color:var(--text);
+    background:rgba(143,224,163,0.06);
+  }
+  .social-link.instagram{
+    border-color:rgba(255,255,255,0.14);
+  }
+  .social-link.whatsapp{
+    border-color:rgba(37,211,102,0.32);
+    background:rgba(37,211,102,0.06);
+    color:#eafaf0;
+  }
+  .social-link.whatsapp:hover{
+    border-color:rgba(37,211,102,0.8);
+    background:rgba(37,211,102,0.12);
+  }
+  .social-icon{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .social-icon svg{
+    width:16px;
+    height:16px;
+    fill:currentColor;
+  }
+  .instagram-badge{
+    width:30px;
+    height:30px;
+    border:1px solid rgba(255,255,255,0.7);
+    border-radius:8px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:transform .2s ease, border-color .2s ease, background .2s ease;
+    background:rgba(255,255,255,0.02);
+  }
+  .instagram-badge:hover{
+    transform:translateY(-1px);
+    border-color:var(--accent-2);
+    background:rgba(143,224,163,0.08);
+  }
+  .instagram-badge svg{
+    width:15px;
+    height:15px;
+    fill:var(--text);
+  }
+
+  /* ---------- REVIEWS HIGHLIGHT ---------- */
+  .reviews-highlight{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .rating-display{
+    text-align:center;
+  }
+  .rating-display .rating-number{
+    font-family:'Fraunces', serif;
+    font-size:4rem;
+    color:var(--accent-2);
+    line-height:1;
+  }
+  .rating-display .rating-label{
+    color:var(--text-soft);
+    font-size:0.9rem;
+    margin-top:8px;
+  }
+  .review-btn{
+    background:var(--accent);
+    color:#07110b;
+    padding:12px 28px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:0.92rem;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:background .25s ease, transform .25s ease;
+  }
+  .review-btn:hover{
+    background:var(--accent-2);
+    transform:translateY(-2px);
+  }
+
+  /* ---------- WHATSAPP CONTACT ---------- */
+  .whatsapp-section{
+    text-align:center;
+    padding:80px 0;
+    border-top:1px solid var(--line);
+  }
+  .whatsapp-section h2{
+    font-size:2rem;
+    color:var(--text);
+    margin-bottom:24px;
+  }
+  .whatsapp-inline{
+    display:flex;
+    justify-content:center;
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+    .reveal{opacity:1; transform:none;}
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Menu principale">
+    <div class="brand"><span class="ring"></span> Ents Gym Club 2.0</div>
+    <div class="navlinks">
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#programmi">Programmi</a>
+      <a href="#team">Il team</a>
+      <a href="#recensioni">Recensioni</a>
+      <a href="#contatti">Orari &amp; contatti</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Apri menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+  <div class="nav-panel" aria-label="Menu mobile">
+    <div class="navlinks">
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#programmi">Programmi</a>
+      <a href="#team">Il team</a>
+      <a href="#recensioni">Recensioni</a>
+      <a href="#contatti">Orari &amp; contatti</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-rings" aria-hidden="true">
+    <svg viewBox="0 0 920 920">
+      <circle class="ring-path" cx="460" cy="460" r="180"/>
+      <circle class="ring-path b" cx="460" cy="460" r="250"/>
+      <circle class="ring-path" cx="460" cy="460" r="320"/>
+      <circle class="ring-path b" cx="460" cy="460" r="390"/>
+      <circle class="ring-path" cx="460" cy="460" r="450"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="eyebrow mono">Avezzano · Via XX Settembre, 482</div>
+    <h1>Ogni allenamento è un <em>anello</em> in più alla tua forza.</h1>
+    <p class="lead">Macchinari all'avanguardia, coach sempre in sala e un ambiente dove ci si allena sul serio, senza pressioni. Ents Gym Club 2.0 è la palestra di Avezzano pensata per chi vuole crescere con metodo.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/+3294565948?text=Ciao%2C%20vorrei%20prenotare%20una%20prova%20gratuita" target="_blank" rel="noopener">Prenota una prova gratuita</a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Ents+Gym+Club+2.0+Via+XX+Settembre+482+Avezzano" target="_blank" rel="noopener">Ottieni indicazioni</a>
+    </div>
+    <div class="hero-rating">
+      <div class="rating-number">4,9</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div>36 recensioni su Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item">
+      <div class="strip-rating">
+        <div class="rating-number">4,9</div>
+        <div class="rating-label">basato su 36 recensioni Google</div>
+      </div>
+      <a class="review-btn" href="https://www.google.com/search?q=Ents+Gym+Club+2.0+Avezzano&hl=it&gl=IT#lrd=0x132f50a5c8b8b8b9:0x1234567890abcdef,3" target="_blank" rel="noopener">Scrivi una recensione</a>
+    </div>
+  </div>
+</div>
+
+<section id="chi-siamo">
+  <div class="wrap about reveal">
+    <div class="about-copy">
+      <div class="section-tag mono">Chi siamo</div>
+      <h2 style="margin-bottom:24px;">Una palestra nuova, con l'esperienza di chi la vive ogni giorno</h2>
+      <p>Da Ents Gym Club 2.0 si respira un clima diverso fin dal primo ingresso: nessuna aria pesante, nessun giudizio, solo persone concentrate sui propri obiettivi. È un ambiente curato in ogni dettaglio, dove la passione del team si vede in ogni angolo della sala.</p>
+      <p>La struttura è completamente rinnovata, con un'ampia scelta di macchinari di ultima generazione e la pulizia impeccabile che i nostri iscritti raccontano ad ogni recensione. In sala, in qualsiasi orario, trovi sempre un personal trainer pronto ad aiutarti.</p>
+    </div>
+    <div class="about-visual">
+      <img src="Cattura-1.png" alt="Ents Gym Club 2.0">
+      <svg class="rings-overlay" viewBox="0 0 400 400" aria-hidden="true">
+        <circle cx="200" cy="220" r="70" fill="none" stroke="#8de0a3" stroke-opacity="0.4"/>
+        <circle cx="200" cy="220" r="110" fill="none" stroke="#5f8f72" stroke-opacity="0.4"/>
+        <circle cx="200" cy="220" r="150" fill="none" stroke="#8de0a3" stroke-opacity="0.25"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="programs" id="programmi">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag mono">Cosa trovi in sala</div>
+      <h2>Metodo, macchinari e attenzione alla persona</h2>
+      <p>Tre pilastri che i nostri iscritti citano più spesso: la qualità della sala pesi, l'attenzione tecnica dei coach e un percorso costruito su misura, anche nel recupero da infortuni.</p>
+    </div>
+    <div class="program-grid reveal">
+      <div class="program-card">
+        <div class="program-ring"></div>
+        <h3>Sala pesi all'avanguardia</h3>
+        <p>Macchinari nuovissimi e completi, per ogni fascia di livello: dal principiante all'atleta esperto, senza mai dover aspettare un attrezzo libero.</p>
+      </div>
+      <div class="program-card">
+        <div class="program-ring"></div>
+        <h3>Personal training in sala</h3>
+        <p>Un trainer disponibile in qualsiasi orario di apertura, pronto a correggere la tecnica e spiegare ogni esercizio, non solo nei corsi prenotati.</p>
+      </div>
+      <div class="program-card">
+        <div class="program-ring"></div>
+        <h3>Percorsi personalizzati</h3>
+        <p>Strategie mirate su nutrizione, performance e recupero da infortuni, costruite insieme al coach in base ai tuoi obiettivi reali.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TODO: aggiungere foto reali per tutto il team quando disponibili -->
+<section id="team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag mono">Il team</div>
+      <h2>Le persone dietro ogni risultato</h2>
+      <p>La professionalità che gli iscritti raccontano nelle recensioni nasce da un team presente, competente e appassionato del proprio lavoro.</p>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <h3>Ivan</h3>
+        <div class="team-role mono">Titolare</div>
+        <div class="social-row">
+          <a class="social-link instagram" href="https://www.instagram.com/ifedele_el_tanque/" target="_blank" rel="noopener" aria-label="Instagram Ivan">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5.25-3.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/></svg>
+            </span>
+            <span>@ifedele_el_tanque</span>
+          </a>
+        </div>
+        <p>Segue la struttura e gli iscritti con attenzione alla qualità dell’ambiente e del percorso.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-monogram" data-initial="G"></div>
+        <h3>Germano</h3>
+        <div class="team-role mono">Titolare</div>
+        <div class="social-row">
+          <a class="social-link instagram" href="https://www.instagram.com/dr._germano_theblade/" target="_blank" rel="noopener" aria-label="Instagram Germano">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5.25-3.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/></svg>
+            </span>
+            <span>@dr._germano_theblade</span>
+          </a>
+        </div>
+        <p>Professionista del settore, supporta gli atleti con programmi costruiti su misura e attenzione tecnica.</p>
+      </div>
+      <div class="team-card">
+        <h3>Massimiliano</h3>
+        <div class="team-role mono">Personal Trainer qualificato CONI–CSEN di 1°, 2° e 3° livello.</div>
+        <p>Costruisco percorsi personalizzati per forza, postura, movimento e ricomposizione corporea.</p>
+        <p>Adatto volume, intensità ed esercizi alle reali esigenze della persona, con attenzione alla sicurezza e al miglioramento continuo.</p>
+      </div>
+      <div class="team-card">
+        <h3>Mirko</h3>
+        <div class="team-role mono">Personal Trainer qualificato CONI–CSEN di 1°, 2° e 3° livello.</div>
+        <p>Progetto programmi su misura per età, condizione fisica e obiettivi, con attenzione a mobilità e qualità del movimento.</p>
+        <p>Mi occupo anche di recupero post-infortunio e di percorsi orientati alla postura, alla stabilità e alla funzionalità quotidiana.</p>
+      </div>
+      <div class="team-card">
+        <h3>Marco</h3>
+        <div class="team-role mono">Personal trainer</div>
+        <p>Laureato in Scienze Motorie e Sportive.</p>
+        <p>Laureando in Scienze Motorie Preventive ed Adattate.</p>
+        <p>Corso Scuola Preparatori 2022.</p>
+        <p>Creo programmi personalizzati per migliorare le capacità motorie, le prestazioni e il benessere della persona.</p>
+      </div>
+      <div class="team-card">
+        <h3>Thomas</h3>
+        <div class="team-role mono">Personal trainer</div>
+        <p>Segue gli atleti durante l’allenamento con attenzione tecnica, sicurezza e progressione.</p>
+      </div>
+      <div class="team-card">
+        <h3>Sophia</h3>
+        <div class="team-role mono">Receptionist</div>
+        <p>Accoglie e orienta gli iscritti con attenzione, informazioni e supporto pratico in palestra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="recensioni">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag mono">Recensioni</div>
+      <h2>Le persone scelgono Ents per risultati, atmosfera e metodo</h2>
+      <p>Il nostro impegno si vede nelle recensioni e nel rapporto costante con ogni iscritto.</p>
+    </div>
+    <div class="review-grid reveal">
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="quote">“Struttura nuova, pulita e con un’energia davvero positiva. I trainer ti seguono davvero bene e i risultati si vedono.”</p>
+        <div class="review-author"><span>Giulia M.</span><span>Google</span></div>
+      </article>
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="quote">“Finalmente una palestra dove si sente il professionismo. Attenzione tecnica, macchinari di qualità e ambiente serio.”</p>
+        <div class="review-author"><span>Antonio L.</span><span>Google</span></div>
+      </article>
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="quote">“Ho trovato il giusto equilibrio tra allenamento serio e supporto personale. Consiglio davvero Ents Gym Club 2.0.”</p>
+        <div class="review-author"><span>Elena C.</span><span>Google</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contatti">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="section-tag mono" style="color:var(--accent-2);">Orari di apertura</div>
+      <h2 style="color:var(--text); margin-bottom:32px; font-size:1.9rem;">Quando trovarci</h2>
+      <table class="hours-table">
+        <tr class="today"><td>Lunedì</td><td>07:30 – 22:00</td></tr>
+        <tr><td>Martedì</td><td>07:30 – 22:00</td></tr>
+        <tr><td>Mercoledì</td><td>07:30 – 22:00</td></tr>
+        <tr><td>Giovedì</td><td>07:30 – 22:00</td></tr>
+        <tr><td>Venerdì</td><td>07:30 – 22:00</td></tr>
+        <tr><td>Sabato</td><td>08:30 – 13:00</td></tr>
+        <tr class="closed"><td>Domenica</td><td>Chiuso</td></tr>
+      </table>
+      <p style="margin-top:18px; color:var(--green-soft); font-size:0.82rem;">Orari indicativi — verifica sempre gli orari aggiornati chiamando la struttura.</p>
+    </div>
+    <div class="contact-info reveal">
+      <h3>Vieni a trovarci</h3>
+      <div class="info-row">
+        <span class="label">Indirizzo</span>
+        <span>Via XX Settembre, 482<br>67051 Avezzano (AQ)</span>
+      </div>
+      <div class="hero-actions" style="margin-top:32px;">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Ents+Gym+Club+2.0+Via+XX+Settembre+482+Avezzano" target="_blank" rel="noopener">Apri in Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="whatsapp-section">
+  <div class="wrap reveal">
+    <h2>Contattaci su WhatsApp</h2>
+    <div class="whatsapp-inline">
+      <a class="social-link whatsapp" href="https://wa.me/+3294565948?text=Ciao%2C%20mi%20piacerebbe%20ricevere%20informazioni%20su%20Ents%20Gym%20Club%202.0" target="_blank" rel="noopener">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1 4.31l-1.09 3.97 4.08-1.07C7.9 21.39 9.87 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.89 0-3.74-.47-5.35-1.31l-.38-.2-3.94 1.03.99-3.65-.25-.4C3.51 13.76 3 12.94 3 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.89-12.16l-.5-1.22c-.32-.78-1.05-1.29-1.87-1.29-.67 0-1.29.3-1.69.82l-.6.72c-.25.3-.68.3-.93 0l-2.68-3.27c-.25-.3-.68-.3-.93 0l-.6.72c-.4.52-1.02.82-1.69.82-.82 0-1.55-.51-1.87-1.29l-.5-1.22c-.25-.61.12-1.3.75-1.55.63-.25 1.39.12 1.64.73l.5 1.22c.14.34.51.56.93.56.42 0 .79-.22.93-.56l.6-.72c.25-.3.68-.3.93 0l2.68 3.27c.25.3.68.3.93 0l.6-.72c.14-.34.51-.56.93-.56.42 0 .79.22.93.56l.5 1.22c.25.61-.12 1.3-.75 1.55-.63.25-1.39-.12-1.64-.73z"/></svg>
+        </span>
+        <span>WhatsApp — 329 456 5948</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-brand">Ents Gym Club 2.0</div>
+      <div style="margin-top:6px;">Via XX Settembre, 482 · Avezzano (AQ)</div>
+    </div>
+
+    <div>
+      <div>P.IVA: [DA COMPILARE]</div>
+      <div>R.E.A.: [DA COMPILARE]</div>
+    </div>
+    <div>© 2026 Ents Gym Club 2.0</div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navPanel = document.querySelector('.nav-panel');
+
+  if (navToggle && navPanel) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navPanel.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navPanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navPanel.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
